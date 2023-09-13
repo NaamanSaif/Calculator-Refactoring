@@ -44,7 +44,7 @@ jobs:
       run: npm run build
 
     - name: Deploy to Cloudflare Pages
-      uses: cloudflare/pages-action@v2
+      uses: cloudflare/pages-action@v1
       with:
         accountId: 55d61194f5027233eff9801665c070c7
         projectName: calculator-refactoring
