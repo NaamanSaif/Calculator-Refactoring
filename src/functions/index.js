@@ -1,8 +1,9 @@
 export const add = (a, b) => {
-    if(!a || !b) return "Error";
+    if(a===null || b===null) return "Error";
     return a + b;
 }
 export const subtract = (a, b) => {
+  if(a===null || b===null) return "Error";
   return a - b;
 }
 export const multiply = (a, b) => a * b;
