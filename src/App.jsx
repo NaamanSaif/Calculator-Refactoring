@@ -18,7 +18,6 @@ const CustomPaper = styled(Paper)(({ theme }) => ({
 
 function App() {
   const [input, setInput] = useState(""); // Initialize state to keep track of input
-
   // Handler function to update the calculator's input
   const onClick = (value) => {
     const isOperator = ['+', '-', 'x', '/'].includes(value);
