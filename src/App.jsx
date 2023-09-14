@@ -40,7 +40,7 @@ function App() {
 
         switch (operator) {
           case "+":
-            result = add(result, nextNumber);
+           // result = add(result, nextNumber);
             break;
           case "-":
             result = subtract(result, nextNumber);
