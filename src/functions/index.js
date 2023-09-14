@@ -1,5 +1,4 @@
 export const add = (a, b) => {
-    if(a===null || b===null) return "Error";
     return a + b;
 }
 export const subtract = (a, b) => {

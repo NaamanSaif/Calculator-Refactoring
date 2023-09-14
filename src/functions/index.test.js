@@ -7,10 +7,7 @@ describe('Test Functions', () =>
         expect(add(2, 2)).toBe(4);
     });
 
-    it('add Null + Null = Error', () =>
-    {
-        expect(add(null, null)).toBe("Error");
-    });
+   
 
     it('subtract Null + Null = Error', () =>
     {
