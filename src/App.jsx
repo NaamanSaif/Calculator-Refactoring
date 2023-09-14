@@ -7,6 +7,7 @@ import { FormControl } from "@mui/base";
 import { FilledInput, InputAdornment } from "@mui/material";
 import CalculatorButtons from "./CalculatorButtons";
 import { useState } from "react";
+import { calculate } from "./functions";
 
 const CustomPaper = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -17,53 +18,6 @@ const CustomPaper = styled(Paper)(({ theme }) => ({
 
 function App() {
   const [input, setInput] = useState(""); // Initialize state to keep track of input
-
-
-  const add = (a, b) => a + b;
-  const subtract = (a, b) => a - b;
-  const multiply = (a, b) => a * b;
-  const divide = (a, b) => (b === 0 ? "Error" : a / b);
-
-  const calculate = (expression) => {
-    try {
-      const operators = ["+", "-", "x", "/"];
-      const tokens = expression.split(/([+\-x/])/); // Split by operators, keeping them in the result
-      const numbers = tokens
-        .filter((token) => !operators.includes(token))
-        .map(Number);
-      const ops = tokens.filter((token) => operators.includes(token));
-
-      let result = numbers[0];
-      for (let i = 0; i < ops.length; i++) {
-        const operator = ops[i];
-        const nextNumber = numbers[i + 1];
-
-        switch (operator) {
-          case "+":
-            result = add(result, nextNumber);
-            break;
-          case "-":
-            result = subtract(result, nextNumber);
-            break;
-          case "x":
-            result = multiply(result, nextNumber);
-            break;
-          case "/":
-            result = divide(result, nextNumber);
-            if (result === "Error") {
-              return "Error";
-            }
-            break;
-          default:
-            return "Error";
-        }
-      }
-
-      return result.toString();
-    } catch (error) {
-      return "Error";
-    }
-  };
 
   // Handler function to update the calculator's input
   const onClick = (value) => {
